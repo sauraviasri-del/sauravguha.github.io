@@ -1,1 +1,272 @@
 # sauravguha.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurav Guha | Academic Portfolio</title>
+    <style>
+        /* CSS Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* Cards for Experience and Education */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card h4 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links {
+            margin: 1rem 0;
+        }
+
+        .contact-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplification for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Saurav Guha</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>Dr. Saurav Guha</h1>
+        <p>Assistant Professor & Jr. Scientist (Statistics) specializing in agricultural statistics, data analysis, and health analytics.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            I am a dedicated researcher and academic in the field of Statistics. I currently serve as an Assistant Professor-cum-Jr. Scientist at Bihar Agricultural University and as a Research Associate at Health Analytics Network LLC. My work bridges the gap between complex statistical methodologies and practical applications in agriculture and health sciences.
+        </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background-color: #e9ecef; max-width: 100%; padding: 4rem 0;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Assistant Professor-cum-Jr. Scientist (Statistics)</h3>
+                    <h4>Bihar Agricultural University | Sabour, Bhagalpur</h4>
+                    <p>Department of Statistics, Mathematics & Computer Application. Leading research and teaching initiatives in statistical analysis for agricultural sciences.</p>
+                </div>
+                <div class="card">
+                    <h3>Research Associate</h3>
+                    <h4>Health Analytics Network LLC | Pittsburgh</h4>
+                    <p>Working alongside Professor Saumyadipta Pyne to develop and apply advanced statistical models for health analytics and public health data.</p>
+                </div>
+                <div class="card">
+                    <h3>Previous Roles</h3>
+                    <h4>ICAR-IASRI | New Delhi</h4>
+                    <p>Served as a Postdoctoral Fellow, Research Associate, and Senior Research Fellow at the ICAR-Indian Agricultural Statistics Research Institute.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="card-grid" style="justify-content: center; display: flex;">
+            <div class="card" style="max-width: 600px; width: 100%;">
+                <h3>Ph.D. in Statistics</h3>
+                <h4>ICAR-Indian Agricultural Research Institute | New Delhi (2018)</h4>
+                <p>Completed under the esteemed supervision of Professor Hukum Chandra. Focused on advanced statistical methodologies and their applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Contact Information</h2>
+        <p style="margin-top: 1rem;">Feel free to reach out for collaborations, academic inquiries, or consulting.</p>
+        <div class="contact-links">
+            <a href="mailto:saurav@bausabour.ac.in">saurav@bausabour.ac.in</a> | 
+            <a href="mailto:sguha@healthanalytics.net">sguha@healthanalytics.net</a> | 
+            <a href="mailto:saurav.iasri@gmail.com">saurav.iasri@gmail.com</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #aaa;">&copy; 2026 Saurav Guha. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
