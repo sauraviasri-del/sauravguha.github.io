@@ -1,271 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurav Guha | Academic Portfolio</title>
-    <style>
-        /* CSS Styles */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurav Guha | Researcher in Statistics & Data Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.7;
+    }
 
-        /* Navigation */
-        nav {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
 
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+    }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-        /* Header / Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-weight: 300;
-        }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(59,130,246,0.15);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+      filter: blur(50px);
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      padding-top: 90px;
+    }
 
-        .btn:hover {
-            background-color: #2980b9;
-        }
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
 
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+    .highlight {
+      color: #60a5fa;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            position: relative;
-        }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 10px auto 0;
-        }
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        /* Cards for Experience and Education */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .btn {
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
 
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
 
-        .card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+    }
 
-        .card h4 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+    }
 
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
+    .profile-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
 
-        .contact-links {
-            margin: 1rem 0;
-        }
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
 
-        .contact-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            margin: 0 10px;
-        }
+    .profile-card h3 {
+      font-size: 1.9rem;
+      margin-bottom: 8px;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Simplification for mobile */
-            }
-        }
-    </style>
+    .profile-card p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title span {
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      margin-top: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #475569;
+      font-size: 1.08rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-content h3 {
+      font-size: 2.1rem;
+      margin-bottom: 24px;
+    }
+
+    .about-content p {
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: 0 10px 35px rgba(15,23,42,0.06);
+    }
+
+    .stat-card h4 {
+      font-size: 2.3rem;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .research-grid,
+    .project-grid,
+    .publication-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 34px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+      transition: 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.10);
+    }
+
+    .card h3 {
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #475569;
+    }
+
+    .card .year {
+      display: inline-block;
+      margin-top: 20px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .dark-section {
+      background: linear-gradient(135deg, #0f172a, #111827);
+      color: white;
+    }
+
+    .dark-section .section-title p {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .dark-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .dark-card p {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .contact-box {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .contact-box h2 {
+      font-size: 3rem;
+      margin-bottom: 24px;
+    }
+
+    .contact-box p {
+      color: #475569;
+      margin-bottom: 36px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #0f172a;
+      color: rgba(255,255,255,0.8);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    @media(max-width: 992px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .section-title h2,
+      .contact-box h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Navigation -->
+<header>
+  <div class="container">
     <nav>
-        <div class="nav-container">
-            <div class="logo">Saurav Guha</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="logo">Saurav Guha</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <header>
-        <h1>Dr. Saurav Guha</h1>
-        <p>Assistant Professor & Jr. Scientist (Statistics) specializing in agricultural statistics, data analysis, and health analytics.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-    </header>
+<section class="hero">
+  <div class="container hero-grid">
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-            I am a dedicated researcher and academic in the field of Statistics. I currently serve as an Assistant Professor-cum-Jr. Scientist at Bihar Agricultural University and as a Research Associate at Health Analytics Network LLC. My work bridges the gap between complex statistical methodologies and practical applications in agriculture and health sciences.
+    <div>
+      <p style="letter-spacing:3px; text-transform:uppercase; color:#93c5fd; margin-bottom:20px; font-weight:600;">
+        Researcher • Statistician • Data Scientist
+      </p>
+
+      <h1>
+        Advancing <span class="highlight">Statistical Innovation</span>
+        for Official Statistics
+      </h1>
+
+      <p>
+        Research focused on small area estimation, spatial statistics,
+        machine learning integration, uncertainty quantification,
+        and advanced inferential methodologies for modern data systems.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="avatar">SG</div>
+
+      <h3>Saurav Guha</h3>
+
+      <p>Researcher in Statistics & Data Science</p>
+
+      <div class="info-box">
+        <span>Research Area</span>
+        <strong>Small Area Estimation</strong>
+      </div>
+
+      <div class="info-box">
+        <span>Specialization</span>
+        <strong>Spatial Statistics</strong>
+      </div>
+
+      <div class="info-box">
+        <span>Methods</span>
+        <strong>Machine Learning</strong>
+      </div>
+
+      <div class="info-box" style="border:none;">
+        <span>Applications</span>
+        <strong>Official Statistics</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-title">
+      <span>About</span>
+      <h2>Building rigorous methodologies for modern statistical challenges</h2>
+      <p>
+        Experienced researcher working in survey statistics, small area estimation,
+        machine learning, spatial modelling, and statistical inference with applications
+        to official statistics and socio-economic systems.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-content">
+        <h3>Research Profile</h3>
+
+        <p>
+          My research develops theoretically rigorous and computationally scalable
+          methodologies in small area estimation, spatial statistics, machine learning,
+          and uncertainty quantification.
         </p>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" style="background-color: #e9ecef; max-width: 100%; padding: 4rem 0;">
-        <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Assistant Professor-cum-Jr. Scientist (Statistics)</h3>
-                    <h4>Bihar Agricultural University | Sabour, Bhagalpur</h4>
-                    <p>Department of Statistics, Mathematics & Computer Application. Leading research and teaching initiatives in statistical analysis for agricultural sciences.</p>
-                </div>
-                <div class="card">
-                    <h3>Research Associate</h3>
-                    <h4>Health Analytics Network LLC | Pittsburgh</h4>
-                    <p>Working alongside Professor Saumyadipta Pyne to develop and apply advanced statistical models for health analytics and public health data.</p>
-                </div>
-                <div class="card">
-                    <h3>Previous Roles</h3>
-                    <h4>ICAR-IASRI | New Delhi</h4>
-                    <p>Served as a Postdoctoral Fellow, Research Associate, and Senior Research Fellow at the ICAR-Indian Agricultural Statistics Research Institute.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <p>
+          Current work focuses on neural tangent kernel-based estimation,
+          spatio-temporal multivariate modelling, climate vulnerability mapping,
+          and advanced statistical learning approaches for official statistics.
+        </p>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="card-grid" style="justify-content: center; display: flex;">
-            <div class="card" style="max-width: 600px; width: 100%;">
-                <h3>Ph.D. in Statistics</h3>
-                <h4>ICAR-Indian Agricultural Research Institute | New Delhi (2018)</h4>
-                <p>Completed under the esteemed supervision of Professor Hukum Chandra. Focused on advanced statistical methodologies and their applications.</p>
-            </div>
-        </div>
-    </section>
+        <p>
+          The research integrates asymptotic theory, optimization algorithms,
+          mixed models, and statistical computing to address complex inferential problems.
+        </p>
+      </div>
 
-    <!-- Contact Section -->
-    <footer id="contact">
-        <h2>Contact Information</h2>
-        <p style="margin-top: 1rem;">Feel free to reach out for collaborations, academic inquiries, or consulting.</p>
-        <div class="contact-links">
-            <a href="mailto:saurav@bausabour.ac.in">saurav@bausabour.ac.in</a> | 
-            <a href="mailto:sguha@healthanalytics.net">sguha@healthanalytics.net</a> | 
-            <a href="mailto:saurav.iasri@gmail.com">saurav.iasri@gmail.com</a>
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <h4>20+</h4>
+          <p>Research Articles & Working Papers</p>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.9rem; color: #aaa;">&copy; 2026 Saurav Guha. All rights reserved.</p>
-    </footer>
+
+        <div class="stat-card">
+          <h4>10+</h4>
+          <p>Conference Presentations</p>
+        </div>
+
+        <div class="stat-card">
+          <h4>6+</h4>
+          <p>Advanced Research Areas</p>
+        </div>
+
+        <div class="stat-card">
+          <h4>∞</h4>
+          <p>Curiosity for Statistical Innovation</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="research" style="background:white;">
+  <div class="container">
+
+    <div class="section-title">
+      <span>Research Areas</span>
+      <h2>Core Expertise</h2>
+      <p>
+        Integrating statistical theory, machine learning, computational inference,
+        and survey methodology for high-dimensional and spatially correlated data.
+      </p>
+    </div>
+
+    <div class="research-grid">
+
+      <div class="card">
+        <h3>Small Area Estimation</h3>
+        <p>
+          Model-based and design-consistent estimation for domains with limited sample sizes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Spatial Statistics</h3>
+        <p>
+          Spatially correlated mixed models and geostatistical approaches for official statistics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Machine Learning for Statistics</h3>
+        <p>
+          Integration of statistical learning frameworks with inferential methodologies.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Spatio-Temporal Modelling</h3>
+        <p>
+          Dynamic estimation and uncertainty quantification under complex dependencies.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Survey Statistics</h3>
+        <p>
+          Advanced methodologies for official statistics and complex survey systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Asymptotic Theory</h3>
+        <p>
+          Large-sample properties, optimization algorithms, and theoretical guarantees.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+
+    <div class="section-title">
+      <span>Publications</span>
+      <h2>Selected Research Contributions</h2>
+      <p>
+        Recent methodological contributions in spatial statistics, machine learning,
+        official statistics, and advanced inferential modelling.
+      </p>
+    </div>
+
+    <div class="publication-grid">
+
+      <div class="card">
+        <h3>Machine Learning-Augmented Spatial Small Area Estimation</h3>
+        <p>
+          Integrating neural tangent kernels with mixed models for robust small area estimation.
+        </p>
+        <span class="year">2026</span>
+      </div>
+
+      <div class="card">
+        <h3>Spatio-Temporal Multivariate Fay-Herriot Models</h3>
+        <p>
+          Advanced uncertainty quantification and asymptotic inference under spatial dependence.
+        </p>
+        <span class="year">2025</span>
+      </div>
+
+      <div class="card">
+        <h3>Climate Vulnerability Estimation Using SAE</h3>
+        <p>
+          District-level climate vulnerability mapping using statistical learning frameworks.
+        </p>
+        <span class="year">2025</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="dark-section">
+  <div class="container">
+
+    <div class="section-title">
+      <span>Projects</span>
+      <h2>Ongoing Research Initiatives</h2>
+      <p>
+        Combining statistical innovation, computational inference,
+        and machine learning for impactful policy-relevant applications.
+      </p>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="card dark-card">
+        <h3>Climate Vulnerability Mapping</h3>
+        <p>
+          Developing spatial SAE methodologies for localized climate risk estimation.
+        </p>
+      </div>
+
+      <div class="card dark-card">
+        <h3>Household Debt Estimation</h3>
+        <p>
+          Bottom-up population estimation and financial vulnerability assessment.
+        </p>
+      </div>
+
+      <div class="card dark-card">
+        <h3>Machine Learning for Official Statistics</h3>
+        <p>
+          Integrating modern statistical learning into official statistical systems.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <div class="contact-box">
+      <span style="color:#2563eb; font-weight:700; letter-spacing:2px; text-transform:uppercase;">
+        Collaboration
+      </span>
+
+      <h2>Interested in collaborative research?</h2>
+
+      <p>
+        Open to collaborations in statistics, data science, spatial modelling,
+        machine learning, survey statistics, and official statistics.
+      </p>
+
+      <div class="hero-buttons" style="justify-content:center;">
+        <a href="mailto:your-email@example.com" class="btn btn-primary">Email Me</a>
+        <a href="#" class="btn btn-outline" style="color:#0f172a; border-color:#cbd5e1;">
+          Google Scholar
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3 style="margin-bottom:10px;">Saurav Guha</h3>
+    <p>
+      Statistics • Spatial Statistics • Machine Learning • Official Statistics
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>
